@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "9732636d-401c-4f32-a64e-701c19f206e1",
+		"name": "Virtual Classroom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20012117"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"student1@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Apoorv\",\n    \"email\": \"student2@gmail.com\",\n    \"password\": \"123\",\n    \"role\": \"student\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutor",
+			"item": [
+				{
+					"name": "Assignments",
+					"item": [
+						{
+							"name": "Get Details of Assignment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidHV0b3IiLCJpZCI6IjkzNGZmMmE3LTM1ZjItNDU2Ny1hM2U2LWZiYzljNTU0YzE0ZCIsImlhdCI6MTcwMzUxNTEzMCwiZXhwIjoxNzAzNTE4NzMwfQ.GXrs7LCUczVGrvPKDQOMW4Q7mYVCA9X437yW1j0qyPM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/assignment/03931364-67b0-4e25-9b00-d9ef034747f2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"assignment",
+										"03931364-67b0-4e25-9b00-d9ef034747f2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Assignment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidHV0b3IiLCJpZCI6IjkzNGZmMmE3LTM1ZjItNDU2Ny1hM2U2LWZiYzljNTU0YzE0ZCIsImlhdCI6MTcwMzUxNTEzMCwiZXhwIjoxNzAzNTE4NzMwfQ.GXrs7LCUczVGrvPKDQOMW4Q7mYVCA9X437yW1j0qyPM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/assignments/03931364-67b0-4e25-9b00-d9ef034747f2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"assignments",
+										"03931364-67b0-4e25-9b00-d9ef034747f2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Assignment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidHV0b3IiLCJpZCI6IjkzNGZmMmE3LTM1ZjItNDU2Ny1hM2U2LWZiYzljNTU0YzE0ZCIsImlhdCI6MTcwMzUxNTEzMCwiZXhwIjoxNzAzNTE4NzMwfQ.GXrs7LCUczVGrvPKDQOMW4Q7mYVCA9X437yW1j0qyPM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"updated\",\n    \"deadlineDate\": \"2023-12-29 08:29:37\",\n    \"publishedAt\": \"2023-12-28 08:29:37\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/assignments/03931364-67b0-4e25-9b00-d9ef034747f2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"assignments",
+										"03931364-67b0-4e25-9b00-d9ef034747f2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Assignment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidHV0b3IiLCJpZCI6IjkzNGZmMmE3LTM1ZjItNDU2Ny1hM2U2LWZiYzljNTU0YzE0ZCIsImlhdCI6MTcwMzUxNTEzMCwiZXhwIjoxNzAzNTE4NzMwfQ.GXrs7LCUczVGrvPKDQOMW4Q7mYVCA9X437yW1j0qyPM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"tutor1 assignment 4\",\n    \"deadlineDate\": \"2023-12-27 08:29:37\",\n    \"publishedAt\": \"2023-12-26 08:29:37\",\n    \"listOfStudents\": [\n        \"60f82936-9020-411e-a844-4c9b82966b9b\",\n        \"f8429a71-977c-4e66-9b91-cb5558048bfa\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/assignment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"assignment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Feeds",
+					"item": [
+						{
+							"name": "Get All Assignments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidHV0b3IiLCJpZCI6IjRhNDFmMmI3LWZlNjAtNGMzZS1hNDFiLWQ3ZDY5NGRiYmI3MCIsImlhdCI6MTcwMzUxNjQxMCwiZXhwIjoxNzAzNTIwMDEwfQ.nJWtiXzsl4dPxAfOzwq8vhPaKuJjP8ehhiEHDv3en3A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/feed",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"feed"
+									],
+									"query": [
+										{
+											"key": "publishedAt",
+											"value": "SCHEDULED",
+											"disabled": true
+										},
+										{
+											"key": "publishedAt",
+											"value": "ONGOING",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "ALL",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "PENDING",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "OVERDUE",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "SUBMITTED",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Assignments",
+					"item": [
+						{
+							"name": "Get Details of Assignment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/assignment/:assId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"assignment",
+										":assId"
+									],
+									"variable": [
+										{
+											"key": "assId",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "submissions",
+					"item": [
+						{
+							"name": "Adding Submission",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjoiNjBmODI5MzYtOTAyMC00MTFlLWE4NDQtNGM5YjgyOTY2YjliIiwiaWF0IjoxNzAzNTE2ODY5LCJleHAiOjE3MDM1MjA0Njl9.OjE8IwegSRaUu7oEXJMAAiAxTBvVryqiaHTozqBWNHY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"assignmentId\": \"e5a37524-894e-4166-bc7f-698ea21df52c\",\n    \"remark\": \"submitdddddddteddata\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/submission",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"submission"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Feeds",
+					"item": [
+						{
+							"name": "Get All Assignments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjoiNmZhNGRmMjktMTIyNi00NjA2LTkxZjYtMWRjMjBiYTA0YjJlIiwiaWF0IjoxNzAzNDE3ODY5LCJleHAiOjE3MDM0MjE0Njl9.EBHsEoLGLR7Q_IE2KtJRgHZJ6P2ebvwbtUkyIqc7BPA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/feed",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"feed"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
